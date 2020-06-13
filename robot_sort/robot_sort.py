@@ -97,7 +97,12 @@ class SortingRobot:
         Sort the robot's list.
         """
         while self._position < len(self._list):
-            if self._list[self._position]
+            if ! self.compare_item:
+                self.swap_item
+            self._position += 1
+        
+        if 
+
         return self._list
 
 
