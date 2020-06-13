@@ -96,8 +96,9 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        while self._position < len(self._list):
+            if self._list[self._position]
+        return self._list
 
 
 if __name__ == "__main__":
