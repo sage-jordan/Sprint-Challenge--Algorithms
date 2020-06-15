@@ -96,15 +96,28 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        while self._position < len(self._list):
-            if ! self.compare_item:
-                self.swap_item
-            self._position += 1
-        
-        if 
+        for i in range(0, len(self._list)):
 
+            while self.can_move_right():
+                self.swap_item()
+                if self.compare_item() == None:
+                    break
+
+                self.move_right()
+            
+
+            while self.can_move_left():
+                self.swap_item()
+                if self.compare_item():
+                    self.swap_item()
+                    break
+                self.move_left()
+
+            self.move_right()
+
+            
         return self._list
-
+     
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
@@ -116,3 +129,26 @@ if __name__ == "__main__":
 
     robot.sort()
     print(robot._list)
+
+
+
+
+    #    while self.compare_item() == 1 & self.can_move_right():
+    #         self.move_right()
+    
+    #     if not self.can_move_right():
+    #         if self.compare_item():
+    #             self.swap_item()
+    #         self.move_left()
+    #         while self.compare_item() & self.can_move_left():
+    #             self.move_left
+    #         return self.sort()
+        
+    #     self.swap_item()
+        
+    #     if self._item == None:
+    #         for n in range(0, len(self._list)):
+    #             if self._list[n] > self._list[n+1]:
+    #                 return 
+        
+    #     return self.sort()
