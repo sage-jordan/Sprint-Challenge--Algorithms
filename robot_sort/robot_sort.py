@@ -96,10 +96,35 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        # returns the sorted list if this is the final index
+        if self.can_move_right() is False:
+            return self._list
 
+        # pick up an item 
+        self.swap_item()
 
+        # move to the right while we can
+        while self.can_move_right():
+            self.move_right()
+
+            # swap if item is greater
+            if self.compare_item() == 1:
+                self.swap_item()
+
+        # move to the left while we can
+        while self.can_move_left():
+            self.move_left()
+
+            if self.compare_item() == None:
+                self.swap_item()
+                break
+
+        # move to next index to sort
+        self.move_right()
+
+        # recurse until sorted
+        self.sort()
+   
 if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
@@ -110,3 +135,67 @@ if __name__ == "__main__":
 
     robot.sort()
     print(robot._list)
+
+
+
+# for i in range(0, len(self._list)):
+
+#             while self.can_move_right():
+#                 self.swap_item()
+#                 if self.compare_item() == None:
+#                     break
+
+#                 self.move_right()
+            
+
+#             while self.can_move_left():
+#                 self.swap_item()
+#                 if self.compare_item():
+#                     self.swap_item()
+#                     break
+#                 self.move_left()
+
+#             self.move_right()
+
+            
+#         return self._list
+
+
+
+    #    while self.compare_item() == 1 & self.can_move_right():
+    #         self.move_right()
+    
+    #     if not self.can_move_right():
+    #         if self.compare_item():
+    #             self.swap_item()
+    #         self.move_left()
+    #         while self.compare_item() & self.can_move_left():
+    #             self.move_left
+    #         return self.sort()
+        
+    #     self.swap_item()
+        
+    #     if self._item == None:
+    #         for n in range(0, len(self._list)):
+    #             if self._list[n] > self._list[n+1]:
+    #                 return 
+        
+    #     return self.sort()
+
+
+ # self.swap_item()
+        # while True:
+        #     while self.can_move_right():
+        #         if self.compare_item():
+        #             self.move_right()
+        #         else:
+        #             self.swap_item()
+
+        #     while self.can_move_left():
+        #         if self.compare_item():
+        #             self.swap_item()
+        #         else:
+        #             self.move_left()
+            
+        #     return self.sort()
+        # return self._list
